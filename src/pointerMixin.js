@@ -48,6 +48,10 @@ export default {
     },
     groupHighlight (index, selectedGroup) {
       if (!this.groupSelect) {
+        const isGroupValueItem = !Boolean(selectedGroup.$groupLabel);
+
+        if (isGroupValueItem) return ['multiselect__option--disabled'];
+
         return ['multiselect__option--group', 'multiselect__option--disabled']
       }
 
